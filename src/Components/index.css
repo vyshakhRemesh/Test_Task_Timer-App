@@ -1,0 +1,90 @@
+.TimerContainer {
+  background-color: white;
+  height: 85%;
+  width: 28%;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.timer_preview_container {
+  border: 1px solid black;
+  height: 40%;
+  width: 80%;
+  text-align: center;
+}
+
+.preview_typography {
+  font-size: 24px;
+}
+
+.preview_time {
+  font-size: 42px;
+  font-weight: 700;
+}
+.large_buttons_container {
+  width: 80%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  justify-content: space-around;
+}
+
+.jog_block {
+  width: 80%;
+  height: 16%;
+  border: 1px solid grey;
+}
+.preset {
+  padding-top: 10px;
+}
+
+.jog_typography {
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.large_buttons {
+  width: 160px;
+  height: 60px;
+  font-size: 24px;
+}
+
+.jog_time {
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.time_set_container {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.time_set_block {
+  text-align: center;
+  padding: 10px;
+}
+
+.time_set_typography {
+  padding: 4px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.set_time {
+  padding: 10px;
+  font-size: 22px;
+}
