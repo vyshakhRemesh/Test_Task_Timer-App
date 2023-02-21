@@ -8,17 +8,14 @@ const TimerButtons = ({
   setTimerOn,
 }) => {
   const startTimer = () => {
-    const { hours, minutes, seconds, sign } = time;
     if (time["hours"] === 0 && time["minutes"] === 0 && time["seconds"] === 0) {
       return;
     }
-    if (time["sign"] == "-") {
+    if (time["sign"] === "-") {
       resetTimer();
     } else {
       setTimerOn(true);
     }
-    console.log("the time is", time);
-    console.log(time["hours"] == 0);
   };
   const pauseTimer = () => {
     setTimerOn(false);

@@ -3,11 +3,11 @@ import React from "react";
 const Jog = ({ time, setTime, jogTracker, setJogTracker }) => {
   const incrementJog = (n) => {
     const { hours, minutes, seconds, sign } = time;
-    if (sign == "" && minutes + n < 60) {
+    if (sign === "" && minutes + n < 60) {
       let newTime = { ...time, minutes: time["minutes"] + n };
       setTime(newTime);
       setJogTracker(!jogTracker);
-    } else if (sign == "-") {
+    } else if (sign === "-") {
       let newTime = {
         hours: 0,
         minutes: n,
@@ -32,11 +32,11 @@ const Jog = ({ time, setTime, jogTracker, setJogTracker }) => {
   };
   const decrementJog = (n) => {
     const { hours, minutes, seconds, sign } = time;
-    if (sign == "" && minutes - n >= 0 && hours == 0) {
+    if (sign === "" && minutes - n >= 0 && hours === 0) {
       let newTime = { ...time, minutes: time["minutes"] - n };
       setTime(newTime);
       setJogTracker(!jogTracker);
-    } else if (sign == "-") {
+    } else if (sign === "-") {
       let newTime = {
         hours: 0,
         minutes: 0,

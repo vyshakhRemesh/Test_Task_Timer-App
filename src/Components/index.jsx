@@ -28,7 +28,7 @@ function TimerComponents() {
         totalSeconds -= 1;
         console.log(totalSeconds);
 
-        if (hours != 0 || minutes > 5) {
+        if (hours !== 0 || minutes > 5) {
           setTimerColor("green");
         } else if (minutes <= 5) {
           setTimerColor("orange");
