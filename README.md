@@ -14,57 +14,67 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### Timer App Documentation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Introduction
 
-### `npm run build`
+The Timer App is a simple web application that allows users to set and run a timer with hours, minutes, and seconds. Users can increment or decrement the time using the provided buttons. The app also features a Start, Pause, and Reset button to control the timer.There is also presets to add or subtract 1 or 5 minutes directly to the timer.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+App Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Timer App comes with the following features:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Set hours, minutes, and seconds using the provided buttons.
+Increment or decrement the time using the provided buttons.
 
-### `npm run eject`
+The hours will range from 0 to 23,
+The minutes from 0 to 60 and
+Seconds from 0 to 60.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Start, Pause, and Reset the timer using the corresponding buttons.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Visual feedback on the timer: the color of the timer changes from green to orange and orange to red as the time decreases.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Jog 5-minute feature allows to add or subtract 5 minutes to the current timer.
+Jog 1-minute feature allows to add or subtract 1 minutes to the current timer
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+After counting down to zero the counter will start a negative countdown and when paused and then restarted the counter will be reset.
+When the counter is in negative count if we press jod -5 minutes or -1minutes the counter will be reset to 0.
 
-## Learn More
+Code Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The Timer App consists of the following files:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+src/App.js: Contains the main app component.
 
-### Code Splitting
+src/components/index.js: Contains the Timer component which handles different states and calls other components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+src/components/index.css:stores the styling for all the components.
 
-### Analyzing the Bundle Size
+src/Assets/Icons: this folder contains all the icon code in jsx format.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+src/Components/TimerButtons/index.js: Contains all the Buttonscand handles its styles.
 
-### Making a Progressive Web App
+src/Components/TimeSet/index.js: contains the part of the timer which sets the time for the timer.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+src/Components/TimePreview/index.js: contains the part of the timer which displays the timer that countdowns.
 
-### Advanced Configuration
+src/Components/Jog/index.js: contains the part which has the jog 5 and jog 1 presets.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+src/index.js: Renders the App component to the DOM.
 
-### Deployment
+Methods
+decrementValue(type): Decrements the value of the specified time type.
+incrementValue(type): Increments the value of the specified time type.
+formatTime(time): Converts the time to required format.
+startTimer(): Starts the timer.
+pauseTimer(): Pause the timer.
+resetTimer(): Resets the timer.
+incrementJog(n): Increments the timer by n.
+decrementJog(n): Decrements the timer by n.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+State
+time: stores the current time in an object which contains values of hours,minutes,seconds and sign
+timerColor: The current color of the timer is stored.
+timerOn: A boolean value indicating whether the timer is active or not..
+jogTracker: Boolean value to indicate whether jog preset is pressed
