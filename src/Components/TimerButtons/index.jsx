@@ -20,7 +20,7 @@ const TimerButtons = ({
     console.log("the time is", time);
     console.log(time["hours"] == 0);
   };
-  const stopTimer = () => {
+  const pauseTimer = () => {
     setTimerOn(false);
   };
   const resetTimer = () => {
@@ -36,7 +36,7 @@ const TimerButtons = ({
           Start
         </button>
       ) : (
-        <button className="large_buttons" onClick={stopTimer}>
+        <button className="large_buttons" onClick={pauseTimer}>
           Pause
         </button>
       )}
